@@ -4,6 +4,7 @@
 # The full license terms are available here: https://github.com/OpenFabrics/sunfish_server_reference/blob/main/LICENSE
 import os
 import traceback
+import pdb
 
 from flask import Flask, request, render_template
 from sunfish.lib.core import Core
@@ -22,6 +23,7 @@ conf = {
 	"redfish_root": "/redfish/v1/",
 	"backend_conf" : {
 		"fs_root": "Resources",
+		"fs_private": "Resources/SunfishPrivate",
 		"subscribers_root": "EventService/Subscriptions",
 		"clean_resource_path": "../../Sunfish/server_start_Resources" 
 	},
@@ -54,6 +56,7 @@ def get(resource):
 @app.route('/<path:resource>', methods=["POST"], strict_slashes=False)
 def post(resource):
 	logger.debug("POST")
+	pdb.set_trace()
 	try :
 		if resource == "EventListener":
 			resp = sunfish_core.handle_event(request.json)
