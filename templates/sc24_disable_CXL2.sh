@@ -1,5 +1,5 @@
 #! /bin/bash
-cp  ../../sunfish_server_reference/Resources/Fabrics/Sunfish_*/Switches/CXL2/index.json ./test_patch_switch_CXL2.json
+cp  ../../sc24_sunfish_server/Resources/Fabrics/Sunfish_*/Switches/CXL2/index.json ./test_patch_switch_CXL2.json
 sed -i "s/Enabled/Disabled/" ./test_patch_switch_CXL2.json
 cat ./test_patch_switch_CXL2.json
 FABRIC_NAME=$(grep -Eo 'Sunfish_...._CXL' test_patch_switch_CXL2.json | head -1)
