@@ -56,7 +56,7 @@ def get(resource):
 @app.route('/<path:resource>', methods=["POST"], strict_slashes=False)
 def post(resource):
 	logger.debug("POST")
-	pdb.set_trace()
+	#pdb.set_trace()
 	try :
 		if resource == "EventListener":
 			resp = sunfish_core.handle_event(request.json)
